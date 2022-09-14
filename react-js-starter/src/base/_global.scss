@@ -1,22 +1,22 @@
 .input {
-  background-color:  #d0d0d0;
-  border: 2px solid  #d6d6d6;
+  background-color: #d0d0d0;
+  border: 2px solid #d6d6d6;
   border-radius: 10px;
-  padding: 10px;
-  margin: 10px auto;
-  transition: all .3s ease-in-out;
+  padding: 14px;
+  margin: 15px auto;
+  transition: all 0.3s ease-in-out;
   &::placeholder {
     color: rgb(163, 162, 162);
     opacity: 1;
   }
   &:focus {
-    transition: all .3s ease-in-out;
-    border-color: rgb(159, 159, 159) !important;
+    transition: all 0.3s ease-in-out;
+    border-color: rgb(65, 64, 64) !important;
   }
 }
 
-.error {
-  border: 2px solid rgb(255, 15, 15);
+.inputError {
+  border: 2px solid rgb(255, 10, 10);
 }
 
 .button {
@@ -24,9 +24,14 @@
   width: 100%;
   background-color: #000000;
   border-radius: 10px;
-  padding: 10px;
+  padding: 17px;
   color: white;
   &:hover {
     opacity: 0.8;
   }
+}
+
+.inputErrorMessage {
+  color: rgb(255, 10, 10);
+  font-size: small;
 }
