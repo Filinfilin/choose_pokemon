@@ -26,6 +26,8 @@
   border-radius: 10px;
   padding: 17px;
   color: white;
+  box-shadow: 1px 1px 5px 1px #545454;
+  height: fit-content;
   &:hover {
     opacity: 0.8;
   }
@@ -34,4 +36,13 @@
 .inputErrorMessage {
   color: rgb(255, 10, 10);
   font-size: small;
+}
+
+.select {
+  background-color: #d0d0d0;
+  border: 2px solid #d6d6d6;
+  border-radius: 10px;
+  padding: 14px;
+  margin: 15px auto;
+  transition: all 0.3s ease-in-out;
 }

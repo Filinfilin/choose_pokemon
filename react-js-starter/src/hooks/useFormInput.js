@@ -7,8 +7,8 @@ export const useInput = (initial, required) => {
   return {
     value,
     error,
-    onChange: (e) => setValue(e.target.value),
-    onBlur: (e) => {
+    onChange: (e) => {
+      setValue(e.target.value);
       if (
         (!e.target.value && required) ||
         (e.target.name !== "number" && !isNaN(e.target.value))
