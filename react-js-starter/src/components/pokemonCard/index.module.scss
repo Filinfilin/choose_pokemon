@@ -1,0 +1,47 @@
+@use "../../base/global";
+
+.cardComponent {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  .card {
+    margin: 2rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 20px;
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 3px 3px 4px 3px #545454;
+    .mainInfo {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .detail{
+      border: 1px solid black;
+      border-radius: 5px;
+      margin: 2px;
+    }
+    .movies {
+      margin-bottom: 10px;
+      height: 300px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      overflow-y: scroll;
+      border: 1px solid black;
+      border-radius: 10px;
+      & > div {
+        border: 1px solid black;
+        margin: 5px;
+        width: fit-content;
+      }
+    }
+  }
+}
