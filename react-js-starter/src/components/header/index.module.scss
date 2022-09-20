@@ -1,0 +1,27 @@
+@use "../../base/global";
+
+.filterContainer {
+  background-color: white;
+  height: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  .filter {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .filterSelection {
+    background-color: rgb(228, 228, 228);
+    padding: 5px;
+    border-radius: 5px;
+    & > span:hover {
+      cursor: pointer;
+      background-color: rgb(237, 140, 140);
+    }
+    & > span {
+      cursor: pointer;
+      background-color: rgb(241, 187, 187);
+    }
+  }
+}
