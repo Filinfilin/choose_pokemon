@@ -1,0 +1,27 @@
+@use "../../base/global";
+
+.dropdown {
+  width: max-content;
+  z-index: 1;
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownContent {
+  position: relative;
+  &>input{
+    position: sticky;
+    top:0;
+  }
+  overflow-y: scroll;
+  max-height: 400px;
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  border: 1px solid #ddd;
+}
+
+.show {
+  display: block;
+}
