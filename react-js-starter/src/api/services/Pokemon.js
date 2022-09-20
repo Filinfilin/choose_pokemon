@@ -2,59 +2,87 @@ import axios from "axios";
 
 const baseUrl = "https://pokeapi.co/api/v2/";
 
-const getAllPokemons = async (url = `${baseUrl}pokemon?offset=20&limit=20`) => {
+const getAllPokemons = async (url = `${baseUrl}pokemon/?limit=1154`) => {
   try {
-    const response = await axios
-      .get(`${url}`)
-      .then(({ data }) => {
-        return data;
-      })
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((result) => result.json())
       .catch((err) => console.log(err));
+
     return response;
   } catch (error) {
     console.log(error);
   }
 };
 
-const loadInfoWithLink = async (link = `${baseUrl}pokemon/23/`) => {
+const loadPokemonInfoWithLink = async (url = `${baseUrl}pokemon/23`) => {
   try {
-    const response = await axios
-      .get(`${link}`)
-      .then(({ data }) => {
-        return data;
-      })
-      .catch((err) => console.log(err));
-    return response;
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+      },
+    }).catch((err) => console.log(err));
+    return response.json();
   } catch (error) {
     console.log(error);
   }
 };
 
-const getPokemnByName = async (name) => {};
+const  getDataFromFilterLink= async (url) => {
+  try {
+    console.log(url, "url")
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+      },
+    }).catch((err) => console.log(err));
+    return response.json();
+  } catch (error) {
+    console.log(error);
+  }  
+};
 
+const getAllAbilities = async () => {
+  try {
+    const response = await fetch(`${baseUrl}ability/?limit=327`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+      },
+    }).catch((err) => console.log(err));
+    return response.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 const getAllmovies = async () => {
-try {
-  const response = await axios
-      .get(`${baseUrl}move/?&limit=844`)
-      .then(({ data }) => {
-        return data;
-      })
-      .catch((err) => console.log(err));
-    return response;
-} catch (error) {
-  console.log(error);
-}
-}
-
-const getPokemonByType = async (pokeType) => {};
+  try {
+    const response = await fetch(`${baseUrl}move/?&limit=844`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+      },
+    }).catch((err) => console.log(err));
+    return response.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 const getPokemonByMovieName = async (movieName) => {};
 
 export const PokemonService = {
-  loadInfoWithLink,
+  getAllAbilities,
+  getDataFromFilterLink,
+  getAllmovies,
+  loadPokemonInfoWithLink,
   getAllPokemons,
-  getPokemnByName,
-  getPokemonByType,
   getPokemonByMovieName,
 };
