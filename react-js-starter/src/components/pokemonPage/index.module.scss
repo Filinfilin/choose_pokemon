@@ -1,0 +1,43 @@
+@use "../../base/global";
+
+.PokemonPageComponent {
+  height: 100%;
+  .header {
+    z-index: 1;
+    background-color: white;
+    border-bottom: 1px solid black;
+    box-shadow: 1px 1px 5px 1px #545454;
+  }
+  .pokemonPageContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: calc(100% - 80px);
+    .pokemonPage {
+      background-color: #fefefe43;
+      width: 50%;
+      position: relative;
+      overflow-y: scroll;
+      .nothing{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+    }
+    .pokemonCard {
+      margin: auto;
+      width: 50%;
+      .notificationHidden{
+        visibility: hidden;
+      }
+    }
+    .pokemonName{
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      margin: 10px;
+      background-color: white;
+    }
+  }
+}
